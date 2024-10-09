@@ -13,13 +13,15 @@ links.forEach(link => {
 window.addEventListener("scroll", function(event) {
   const home = document.querySelector("#home");
   const about = document.querySelector("#about");
+  const projects = document.querySelector("#projects");
+  const contacts = document.querySelector("#contacts");
   const progressBar = document.querySelector(".progress-bar");
   const scrollPosition = window.scrollY;
 
   if (!firstScroll && !linkClicked) {
     event.preventDefault();
     window.scrollTo({
-      top: home.offsetTop,
+      top: projects.offsetTop,
       behavior: "smooth"
     });
     firstScroll = true;

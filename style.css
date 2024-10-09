@@ -156,7 +156,6 @@ h1 {
   transform: translateX(0);
 }
 
-/* Main About Section */
 #about {
   display: flex;
   flex-direction: column;
@@ -256,21 +255,86 @@ h1 {
 }
 
 #contacts {
-  font-size: 60px;
-  text-align: center;
-  padding: 20px;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#contacts p,
-#contacts a {
-  font-size: 30px;
+.contacts-left, .contacts-right {
+  flex: 1;
+  height: 50vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-#contacts a {
+.contact-form {
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-input {
+  width: 20vw;
+  padding: 10px;
+  margin: 10px;
+  border: none;
   text-decoration: none;
+  border-bottom: 1px solid #03045E;
+  background: transparent;
 }
 
-#contacts a:hover {
-  font-size: 32px;
+.form-input:focus {
+  outline: none;
+  border-bottom: 1px solid #03045E;
+}
+
+.form-input::placeholder {
+  color: #03045E;
+}
+
+textarea {
+  resize: none;
+  height: 10vh;
+  text-align: justify;
+}
+
+.button {
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  background-image: linear-gradient(to bottom right, #03045E, #0077B6);
+  transition: all 0.5s ease-in-out;
+}
+
+.button:hover {
+  background-image: linear-gradient(to bottom right, #0077B6, #03045E);
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.social-link {
+  font-size: 30px;
+  margin: 10px;
+  padding: 10px;
+  color: #03045E;
+}
+
+.social-link:hover {
+  color: #0077B6;
+  transform: scale(1.1);
 }
