@@ -15,13 +15,11 @@ window.addEventListener("scroll", function (event) {
   const about = document.querySelector("#about");
   const projects = document.querySelector("#projects");
   const contacts = document.querySelector("#contacts");
-  const progressBar = document.querySelector(".progress-bar");
-  const scrollPosition = window.scrollY;
 
   if (!firstScroll && !linkClicked) {
     event.preventDefault();
     window.scrollTo({
-      top: about.offsetTop,
+      top: home.offsetTop,
       behavior: "smooth",
     });
     firstScroll = true;
@@ -34,13 +32,6 @@ window.addEventListener("scroll", function (event) {
     firstScroll = false;
     linkClicked = false;
   }
-
-  const aboutTop = about.offsetTop;
-  const aboutHeight = about.offsetHeight;
-  const aboutScrollPosition = window.scrollY + window.innerHeight;
-
-  const progress = Math.min((aboutScrollPosition - aboutTop) / aboutHeight, 1);
-  progressBar.style.height = `${progress * 100}%`;
 });
 
 document.addEventListener("DOMContentLoaded", function () {

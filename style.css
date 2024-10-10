@@ -16,7 +16,7 @@ html {
 
 body {
   background-image: linear-gradient(to bottom right, #caf0f8, #00b4d8);
-  color: #03045E;
+  color: #03045e;
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -63,14 +63,14 @@ h2 {
 
 .fa-circle {
   font-size: 7px;
-  color: #0077B6;
+  color: #0077b6;
 }
 
 #navbar li a {
   display: block;
   padding: 15px 20px;
   text-decoration: none;
-  color: #03045e;
+  color: #023e8a;
   font-size: 1.25rem;
   transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
@@ -85,6 +85,7 @@ h2 {
   -webkit-transform: scale(1.2);
   -o-transform: scale(1.2);
   -ms-transform: scale(1.2);
+  color: #03045e;
 }
 
 #home {
@@ -116,13 +117,34 @@ h2 {
   opacity: 0;
   transition: all 0.5s ease-in-out;
   width: 70%;
-  text-align: left;
-  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #second-intro p {
   font-size: 1.5rem;
   line-height: 2rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.resume-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0077b6;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.resume-btn:hover {
+  background-color: #023e8a;
 }
 
 #profile-details {
@@ -136,8 +158,8 @@ h2 {
 }
 
 #profile-pic {
-  height: 40rem;
-  border: 5px solid #0077B6;
+  height: 60vh;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
 }
 
 .scrolled .content-wrapper {
@@ -145,7 +167,6 @@ h2 {
 }
 
 .scrolled #intro {
-  opacity: 0.7;
   transform: translateX(0);
 }
 
@@ -176,63 +197,77 @@ h2 {
 
 .about-text {
   flex: 1;
-  padding: 10px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 5vw;
+  height: 60vh;
 }
 
 .about-text p {
   font-size: 1.5rem;
-  line-height: 1.8;
+  line-height: 2rem;
   text-align: justify;
 }
 
-.timeline {
+.about-timeline {
   flex: 1;
+  position: relative;
+}
+
+.timeline {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.timeline-container {
-  position: relative;
+  justify-content: space-around;
   padding-left: 20px;
-  height: 100%;
+  padding-right: 20px;
 }
 
-.timeline-bar {
+.timeline::before {
+  content: "";
   position: absolute;
-  left: 0;
+  left: 50%;
   top: 0;
+  bottom: 0;
   width: 5px;
-  height: 100%;
-  background-color: #e0e0e0;
-}
-
-.progress-bar {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 5px;
-  height: 0;
-  background-color: #00b4d8;
-  transition: height 1s ease-out;
+  background-color: #03045e; /* Vertical line color */
 }
 
 .timeline-item {
-  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  position: relative;
+}
+
+/* Year styling (aligned to the left) */
+.year {
+  flex: 0 0 40%;
+  text-align: right;
+  padding-right: 20px;
+  font-weight: bold;
+}
+
+/* Event details (aligned to the right) */
+.details {
+  flex: 0 0 40%;
   padding-left: 20px;
+  text-align: left;
+  font-size: 0.8rem;
 }
 
-.timeline-item h3 {
-  margin: 0;
-  font-size: 1.5rem;
-}
-
-.timeline-item p {
-  margin: 5px 0 0;
-  font-size: 1.2rem;
-  color: #555;
+/* Adding a dot or marker on the timeline */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 1px;
+  background-color: #03045e;
 }
 
 #projects {
@@ -283,11 +318,14 @@ h2 {
 .card-info {
   position: absolute;
   width: 100%;
-  height: 30%;
   bottom: 0;
-  padding: 20px;
+  text-align: center;
   color: white;
   background: rgba(0, 0, 0, 0.5);
+}
+
+.card-info p {
+  overflow: collapse;
 }
 
 #contacts {
@@ -297,7 +335,8 @@ h2 {
   align-items: center;
 }
 
-.contacts-left, .contacts-right {
+.contacts-left,
+.contacts-right {
   flex: 1;
   height: 50vh;
   overflow: hidden;
@@ -321,17 +360,17 @@ h2 {
   margin: 10px;
   border: none;
   text-decoration: none;
-  border-bottom: 1px solid #03045E;
+  border-bottom: 1px solid #03045e;
   background: transparent;
 }
 
 .form-input:focus {
   outline: none;
-  border-bottom: 1px solid #03045E;
+  border-bottom: 1px solid #03045e;
 }
 
 .form-input::placeholder {
-  color: #03045E;
+  color: #03045e;
 }
 
 textarea {
@@ -348,7 +387,7 @@ textarea {
   cursor: pointer;
   font-size: 1.2rem;
   margin-top: 10px;
-  background-image: linear-gradient(to right, #03045E, #0077B6);
+  background-image: linear-gradient(to right, #03045e, #0077b6);
   background-size: 200%;
   background-position: left;
   transition: all 0.5s ease-in-out;
@@ -370,7 +409,7 @@ textarea {
   font-size: 30px;
   margin: 10px;
   padding: 10px;
-  color: #03045E;
+  color: #03045e;
   transition: all 1s ease-in-out;
 }
 
