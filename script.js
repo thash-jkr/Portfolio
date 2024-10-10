@@ -21,7 +21,7 @@ window.addEventListener("scroll", function (event) {
   if (!firstScroll && !linkClicked) {
     event.preventDefault();
     window.scrollTo({
-      top: home.offsetTop,
+      top: about.offsetTop,
       behavior: "smooth",
     });
     firstScroll = true;
