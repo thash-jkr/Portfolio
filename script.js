@@ -46,7 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let mouseY = 0;
     let mouseLeaveDelay = null;
 
-    // Set card background image from the data attribute
     const dataImage = cardWrap.getAttribute("data-image");
     cardBg.style.backgroundImage = `url(${dataImage})`;
 
